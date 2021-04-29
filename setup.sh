@@ -12,6 +12,8 @@ Installing themes...
 sleep 20
 pkg install zsh
 pkg install git
+pkg install figlet
+pkg install fortune
 pkg install termux-elf-cleaner
 ./install.sh
 cd ~/
