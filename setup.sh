@@ -14,12 +14,12 @@ pkg install zsh
 pkg install git
 pkg install termux-elf-cleaner
 ./install.sh
-cp agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
-cp *.properties ~/.termux/
+cd ~/
+cp ~/Setup/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+cp ~/Setup/*.properties ~/.termux/
 cp ~/Setup/.* ~/
-cd ~
-mkdir GitHub
-cd GitHub
+mkdir ~/GitHub/
+cd ~/GitHub
 git clone https://github.com/OogleGlu/GitEasy-Bash.git
 cd GitEasy-Bash
 cp g* $BIN/
@@ -27,6 +27,7 @@ cd ~/GitHub
 rm -rf GitEasy-Bash
 gclone DPack
 cp ./src/dpack $BIN/
+cp ~/
 echo -e "You can access:
 - termux root using \$ROOT
 - bin using \$BIN
