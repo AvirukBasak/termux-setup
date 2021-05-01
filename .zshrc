@@ -2,7 +2,6 @@ ZSH_THEME="agnoster"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export GIT="https://github.com/"
 export ROOT="${PREFIX:0:27}"
 export USR=$ROOT/usr
 export BIN=$ROOT/usr/bin
@@ -112,11 +111,3 @@ alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
 alias l='ls -lh'
 alias gcc='clang'
 alias cls='clear'
-
-gclone() {
-    cd ~/GitHub/
-    git clone $GIT/"$1"
-    cd "$1"
-    ginit
-    cd ~/GitHub/"$1"
-}
