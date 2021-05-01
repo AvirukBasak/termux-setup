@@ -68,6 +68,7 @@ Git shortcuts:
 Vim has been setup
 Pinch to zoom"
 cd
+rm $ROOT/usr/etc/motd
 termux-reload-settings >> ~/setup.log 2>> ~/setup-err.log
 mkdir GitHub/
 echo -e "Setup complete, logs saved in
