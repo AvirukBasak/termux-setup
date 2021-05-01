@@ -51,6 +51,7 @@ echo "Done"
 echo
 echo "Login to GitHub account"
 gauth
+echo
 echo -e "Environment variables:
 - termux root using \$ROOT
 - bin using \$BIN
