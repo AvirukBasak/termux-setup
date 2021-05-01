@@ -79,4 +79,3 @@ echo -e "Setup complete, logs saved in
 - ~/setup-err.log
 
 Please restart termux"
-https://github.com/OogleGlu/Setup/archive/refs/heads/main.zip
