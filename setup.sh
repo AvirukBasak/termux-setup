@@ -20,9 +20,9 @@ pkg install zsh >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed zsh shell"
 pkg install git >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed git"
-pkg install vim >> ~/setup.log 2>> ~/setup-err.log
+apt -y install vim >> ~/setup.log 2>> ~/setup-err.log
 echo "Attempting vim installation"
-apt-get install vim >> ~/setup.log 2>> ~/setup-err.log
+apt-get -y install vim >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed vim"
 pkg install figlet >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed figlet"
@@ -68,7 +68,7 @@ Git shortcuts:
 Vim has been setup
 Pinch to zoom"
 cd
-rm $ROOT/usr/etc/motd
+rm $PREFIX/etc/motd
 termux-reload-settings >> ~/setup.log 2>> ~/setup-err.log
 mkdir GitHub/
 echo -e "Setup complete, logs saved in
