@@ -73,6 +73,7 @@ cd
 rm $PREFIX/etc/motd
 termux-reload-settings >> ~/setup.log 2>> ~/setup-err.log
 mkdir GitHub/
+rm  ~/Setup-main ~/termux-ohmyzsh -rf
 echo -e "Setup complete, logs saved in
 - ~/setup.log
 - ~/setup-err.log
