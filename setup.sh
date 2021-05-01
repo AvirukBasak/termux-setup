@@ -34,9 +34,9 @@ echo
 echo "Installing themes: oh-my-zsh..."
 ./install.sh 2>> ~/setup-err.log
 echo "Setting up shell..."
-cp ./agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
-cp ./*.properties ~/.termux/
-cp ./.* ~/
+cp ./agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme >> ~/setup.log 2>> ~/setup-err.log
+cp ./*.properties ~/.termux/ >> ~/setup.log 2>> ~/setup-err.log
+cp ./.* ~/ >> ~/setup.log 2>> ~/setup-err.log
 echo "Cleaning ELFs from binaries..."
 termux-elf-cleaner $BIN/* >> ~/setup.log 2>> ~/setup-err.log
 echo "Done"
