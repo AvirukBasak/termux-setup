@@ -45,6 +45,7 @@ echo "Installing GitEasy-Bash"
 git clone https://github.com/OogleGlu/GitEasy-Bash.git >> ~/setup.log 2>> ~/setup-err.log
 cd GitEasy-Bash/
 ./termux-install.sh >> ~/setup.log 2>> ~/setup-err.log
+cd ../
 rm -rf GitEasy-Bash
 echo "Done"
 echo
