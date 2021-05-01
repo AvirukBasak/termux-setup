@@ -4,6 +4,7 @@ echo "Updating repositories..."
 echo "Make sure you're online"
 apt update 2>> ~/setup-err.log
 apt-get update 2>> ~/setup-err.log
+echo
 echo "Installing wget"
 pkg install wget >> ~/setup.log 2>> ~/setup-err.log
 echo "Downloading oh-my-zsh theme installer..."
