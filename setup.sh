@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo "Updating repositories..."
 echo "Make sure you're online"
 apt update 2>> ~/setup-err.log
