@@ -5,6 +5,7 @@ Setup for termux
 - Installs vim and git
 - Installs scripts from [GitEasy-Bash](https://github.com/OogleGlu/GitEasy-Bash).
 - Installs fortune
+- Adds arrow keys to keyboard.
 
 # Screenshots
 
