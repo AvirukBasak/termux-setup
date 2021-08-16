@@ -4,8 +4,8 @@ ZSH_THEME="agnoster"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -a'
+alias ll='ls -l'
+alias la='ls -lah'
 alias ld='ls -lhd'
 alias p='pwd'
 alias u='cd /data/data/com.termux/files/usr'
@@ -28,7 +28,6 @@ export ZSH_DISABLE_COMPFIX=true
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias chcolor='/data/data/com.termux/files/home/.termux/colors.sh'
 alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
-alias l='ls -lh'
 alias gcc='clang'
 alias cls='clear'
 alias gcsh="gcloud cloud-shell ssh"

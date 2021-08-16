@@ -8,7 +8,7 @@ apt-get -y upgrade 2>> ~/setup-err.log
 apt -y upgrade 2>> ~/setup-err.log
 echo
 echo "Installing wget"
-pkg install wget >> ~/setup.log 2>> ~/setup-err.log
+apt -y install wget >> ~/setup.log 2>> ~/setup-err.log
 echo "Downloading oh-my-zsh theme installer..."
 wget https://raw.githubusercontent.com/Cabbagec/termux-ohmyzsh/master/install.sh >> ~/setup.log 2>> ~/setup-err.log
 chmod 700 ./install.sh >> ~/setup.log 2>> ~/setup-err.log
@@ -20,22 +20,23 @@ echo -e "You'll be asked to choose:
 echo
 echo "Installing packages..."
 sleep 7
-pkg install zsh >> ~/setup.log 2>> ~/setup-err.log
+apt -y install zsh >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed zsh shell"
-pkg install git >> ~/setup.log 2>> ~/setup-err.log
+apt -y install git >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed git"
 apt -y install vim >> ~/setup.log 2>> ~/setup-err.log
 echo "Attempting vim installation"
 apt-get -y install vim >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed vim"
-pkg install figlet >> ~/setup.log 2>> ~/setup-err.log
+apt -y install figlet >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed figlet"
-pkg install fortune >> ~/setup.log 2>> ~/setup-err.log
+apt -y install fortune >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed fortune"
-pkg install termux-elf-cleaner >> ~/setup.log 2>> ~/setup-err.log
+apt -y install termux-elf-cleaner >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed termux-elf-cleaner"
 echo
 echo "Installing themes: oh-my-zsh..."
+rm ~/storage -rf 2>> ~/setup-err.log
 ./install.sh 2>> ~/setup-err.log
 echo "Setting up shell..."
 cp ./agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme >> ~/setup.log 2>> ~/setup-err.log
@@ -50,7 +51,6 @@ git clone https://github.com/OogleGlu/GitEasy-Bash.git >> ~/setup.log 2>> ~/setu
 cd GitEasy-Bash/
 ./termux-install.sh >> ~/setup.log 2>> ~/setup-err.log
 cd ../
-rm -rf GitEasy-Bash
 echo "Done"
 echo
 echo "Login to GitHub account"
@@ -74,10 +74,12 @@ Git shortcuts:
 Vim has been setup
 Pinch to zoom"
 cd
-rm $PREFIX/etc/motd
+rm $PREFIX/etc/motd 2>> ~/setup-err.log
 termux-reload-settings >> ~/setup.log 2>> ~/setup-err.log
-mkdir GitHub/
-rm  ~/Setup-main ~/termux-ohmyzsh -rf
+rm ~/storage
+ln -s /sdcard/
+mkdir /sdcard/GitHub
+ln -s /sdcard/GitHub
 echo -e "Setup complete, logs saved in
 - ~/setup.log
 - ~/setup-err.log
