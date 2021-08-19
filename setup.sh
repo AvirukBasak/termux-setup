@@ -2,13 +2,16 @@
 clear
 echo "Updating repositories..."
 echo "Make sure you're online"
+# update packages
 apt update 2>> ~/setup-err.log
 apt-get update 2>> ~/setup-err.log
 apt-get -y upgrade 2>> ~/setup-err.log
 apt -y upgrade 2>> ~/setup-err.log
 echo
+# install wget
 echo "Installing wget"
 apt -y install wget >> ~/setup.log 2>> ~/setup-err.log
+# download oh-my-zsh installer for termux
 echo "Downloading oh-my-zsh theme installer..."
 wget https://raw.githubusercontent.com/Cabbagec/termux-ohmyzsh/master/install.sh >> ~/setup.log 2>> ~/setup-err.log
 chmod 700 ./install.sh >> ~/setup.log 2>> ~/setup-err.log
@@ -18,12 +21,15 @@ echo -e "You'll be asked to choose:
 1. A color theme: u better enter 0
 2. Font: Source code pro is 24"
 echo
+# install necessary packages
 echo "Installing packages..."
 sleep 7
 apt -y install zsh >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed zsh shell"
 apt -y install git >> ~/setup.log 2>> ~/setup-err.log
 echo "Installed git"
+apt -y install openssh >> ~/setup.log 2>> ~/setup-err.log
+echo "Installed openssh"
 apt -y install vim >> ~/setup.log 2>> ~/setup-err.log
 echo "Attempting vim installation"
 apt-get -y install vim >> ~/setup.log 2>> ~/setup-err.log
@@ -55,7 +61,7 @@ echo "Done"
 echo
 echo "Login to GitHub account"
 gauth
-echo
+read -p "Press ENTER to continue "
 echo -e "Environment variables:
 - termux root using \$ROOT
 - bin using \$BIN
@@ -73,13 +79,20 @@ Git shortcuts:
 
 Vim has been setup
 Pinch to zoom"
+read -p "Press ENTER to continue "
 cd
 rm $PREFIX/etc/motd 2>> ~/setup-err.log
 termux-reload-settings >> ~/setup.log 2>> ~/setup-err.log
-rm ~/storage
-ln -s /sdcard/
+rm ~/storage -rf
+ln -s /sdcard/ ~/storage
 mkdir /sdcard/GitHub
 ln -s /sdcard/GitHub
+mkdir ~/Archive
+thisDir = "$(basename $PWD)"
+cd
+mv ~/"$thisDir" ~/Archive/
+mv ~/termux-ohmyzsh ~/Archive/
+rm .bash* -rf
 echo -e "Setup complete, logs saved in
 - ~/setup.log
 - ~/setup-err.log
