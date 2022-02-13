@@ -28,7 +28,7 @@ sapt -y install wget      >> ~/setup.log 2>> ~/setup-err.log
 # download oh-my-zsh installer for termux
 echo "Downloading oh-my-zsh theme installer..."
 wget https://raw.githubusercontent.com/Cabbagec/termux-ohmyzsh/master/install.sh >> ~/setup.log 2>> ~/setup-err.log
-chmod 700 ./res/install.sh    >> ~/setup.log 2>> ~/setup-err.log
+chmod 700 ./install.sh    >> ~/setup.log 2>> ~/setup-err.log
 echo "Done"
 echo
 
@@ -60,7 +60,7 @@ echo
 
 echo "Installing themes: oh-my-zsh..."
 rm ~/storage -rf  2>> ~/setup-err.log
-./res/install.sh      2>> ~/setup-err.log
+./install.sh      2>> ~/setup-err.log
 
 echo "Setting up shell..."
 cp ./res/agnoster.zsh-theme   ~/.oh-my-zsh/themes/agnoster.zsh-theme >> ~/setup.log 2>> ~/setup-err.log
