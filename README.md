@@ -1,4 +1,4 @@
-no# Termux-Setup
+# Termux-Setup
 Setup for termux
 - Sets up zsh
 - Installs ohmyzsh themes using installer from [https://github.com/cabbagec/termux-ohmyzsh](https://github.com/cabbagec/termux-ohmyzsh)
