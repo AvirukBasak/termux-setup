@@ -26,7 +26,7 @@ sapt -y install wget      >> ~/setup.log 2>> ~/setup-err.log
 # download oh-my-zsh installer for termux
 echo "Downloading oh-my-zsh theme installer..."
 wget https://raw.githubusercontent.com/Cabbagec/termux-ohmyzsh/master/install.sh >> ~/setup.log 2>> ~/setup-err.log
-chmod 700 ./install.sh    >> ~/setup.log 2>> ~/setup-err.log
+chmod 700 ./res/install.sh    >> ~/setup.log 2>> ~/setup-err.log
 echo "Done"
 echo
 
@@ -58,15 +58,15 @@ echo
 
 echo "Installing themes: oh-my-zsh..."
 rm ~/storage -rf  2>> ~/setup-err.log
-./install.sh      2>> ~/setup-err.log
+./res/install.sh      2>> ~/setup-err.log
 
 echo "Setting up shell..."
-cp ./agnoster.zsh-theme   ~/.oh-my-zsh/themes/agnoster.zsh-theme >> ~/setup.log 2>> ~/setup-err.log
-cp ./*.properties         ~/.termux/                             >> ~/setup.log 2>> ~/setup-err.log
-cp ./.*                   ~/                                     >> ~/setup.log 2>> ~/setup-err.log
+cp ./res/agnoster.zsh-theme   ~/.oh-my-zsh/themes/agnoster.zsh-theme >> ~/setup.log 2>> ~/setup-err.log
+cp ./res/*.properties         ~/.termux/                             >> ~/setup.log 2>> ~/setup-err.log
+cp ./res/.*                   ~/                                     >> ~/setup.log 2>> ~/setup-err.log
 
 echo "Cleaning ELFs from binaries..."
-termux-elf-cleaner $BIN/*                                        >> ~/setup.log 2>> ~/setup-err.log
+termux-elf-cleaner $BIN/*                                            >> ~/setup.log 2>> ~/setup-err.log
 echo "Done"
 echo
 
@@ -94,9 +94,9 @@ mkdirp /sdcard/GitHub
 ln -s /sdcard/GitHub
 mkdirp ~/Archive
 
-thisDir = "$(basename $PWD)"
+THIS_DIR = "$(basename $PWD)"
 cd
-mv ~/"$thisDir" ~/Archive/
+mv ~/"$THIS_DIR" ~/Archive/
 mv ~/termux-ohmyzsh ~/Archive/
 rm .bash* -rf
 

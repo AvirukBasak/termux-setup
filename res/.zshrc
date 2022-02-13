@@ -1,4 +1,4 @@
-export PATH=$HOME/.local/bin:/data/data/com.termux/files/usr/google-cloud-sdk/bin:$PATH
+export PATH=.:.bin:$HOME/.local/bin:/data/data/com.termux/files/usr/google-cloud-sdk/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git)
@@ -21,9 +21,6 @@ ZSH_THEME="agnoster"
 export ROOT="${PREFIX:0:27}"
 export USR=$ROOT/usr
 export BIN=$ROOT/usr/bin
-figlet "Termux"
-fortune
-DISPLAY=:1
 export ZSH_DISABLE_COMPFIX=true
 source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias chcolor='/data/data/com.termux/files/home/.termux/colors.sh'
@@ -32,3 +29,7 @@ alias gcc='clang'
 alias cls='clear'
 alias gcsh="gcloud cloud-shell ssh"
 alias catn="cat --number"
+alias ssl=openssl
+figlet "Termux"
+fortune
+DISPLAY=:1
