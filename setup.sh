@@ -1,5 +1,7 @@
 #!/bin/bash
+
 clear
+pkg install tsu
 
 # commands
 export alias mkdirp="mkdir -p"
